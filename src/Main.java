@@ -4,6 +4,9 @@ import java.util.Scanner;
 
 public class Main {
 
+    public static int userWins = 0;
+    public static int computerWins = 0;
+
     public static void gameMenu() {
         System.out.println("1.Start Game");
         System.out.println("2.Exit Game");
@@ -25,16 +28,19 @@ public class Main {
                 System.out.println("You: Rock");
                 System.out.println("Computer: Paper");
                 System.out.println("You lose");
+                computerWins++;
             } else {
                 System.out.println("You: Rock");
                 System.out.println("Computer: Scissors");
                 System.out.println("You win");
+                userWins++;
             }
         } else if (userChoice == 2) {
             if (computerChoice == 1) {
                 System.out.println("You: Paper");
                 System.out.println("Computer: Rock");
                 System.out.println("You win");
+                userWins++;
             } else if (computerChoice == 2) {
                 System.out.println("You: Paper");
                 System.out.println("Computer: Paper");
@@ -43,16 +49,19 @@ public class Main {
                 System.out.println("You: Paper");
                 System.out.println("Computer: Scissors");
                 System.out.println("You lose");
+                computerWins++;
             }
         } else {
             if (computerChoice == 1) {
                 System.out.println("You: Scissors");
                 System.out.println("Computer: Rock");
                 System.out.println("You lose");
+                computerWins++;
             } else if (computerChoice == 2) {
                 System.out.println("You: Scissors");
                 System.out.println("Computer: Paper");
                 System.out.println("You win");
+                userWins++;
             } else {
                 System.out.println("You: Scissors");
                 System.out.println("Computer: Scissors");
@@ -89,6 +98,7 @@ public class Main {
             computerChoice = (int) (Math.random() * 3 + 1);
 
             compare(userChoice, computerChoice);
+            System.out.println("Result: " + userWins + ":" + computerWins);
 
             gameMenu();
             System.out.print("Please choose: ");
@@ -102,5 +112,4 @@ public class Main {
 
         sc.close();
     }
-// asdas
 }
